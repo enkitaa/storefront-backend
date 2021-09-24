@@ -20,6 +20,20 @@ These are the notes from a meeting with the frontend developer that describe wha
 - Current Order by user (args: user id)[token required]
 - [OPTIONAL] Completed Orders by user (args: user id)[token required]
 
+## RESTful Routes
+#### Products
+- Index - '/products' [GET]
+- Show - '/products/:id' [GET]
+- Create - '/products' [POST]
+
+#### Users
+- Index - '/users' [GET]
+- Show - '/users/:id' [GET]
+- Create - '/users' [POST]
+
+#### Orders
+- Current Order by user (args: user id) - '/orders/:id/products'[GET] 
+
 ## Data Shapes
 #### Product
 -  id
@@ -39,4 +53,14 @@ These are the notes from a meeting with the frontend developer that describe wha
 - quantity of each product in the order
 - user_id
 - status of order (active or complete)
+
+## Tables
+#### Product
+Table: products(id: varchar[primary key],name: varchar,price: number)
+
+#### User
+Table: users(id: varchar[primary key], first_name: varchar, last_name: varchar, password: varchar)
+
+#### Orders
+Table: order_products(id: varchar[primary key], quantity: number, status: varchar, product_id: varchar [foreign key from products table],user_id: varchar [foreign key from users table])
 
