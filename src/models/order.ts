@@ -35,6 +35,10 @@ export class OrderList {
         }
     }
     async create(o: Order): Promise<Order> {
+        let status = o.status;
+        if(status == 'undefined'){
+            status = 'active'
+        }
         try {
             const sql =
                 "INSERT INTO orders (quantity, status, product_id, user_id) VALUES($1, $2, $3, $4) RETURNING *";

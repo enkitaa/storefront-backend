@@ -1,5 +1,9 @@
 //@ts-ignore
 import client from "../database";
+import bcrypt, { hash } from 'bcrypt';
+
+const pepper = process.env.BCYPT_PASSWORD;
+const saltrounds = process.env.SALT_ROUNDS;
 
 export type User = {
     id: Number;
@@ -34,6 +38,7 @@ export class UserList {
         }
     }
     async create(u: User): Promise<User> {
+        let hash = bcrypt.hashSync(u.password + pepper, Number(saltrounds))
         try {
             const sql =
                 "INSERT INTO users (first_name, last_name, password) VALUES($1, $2, $3) RETURNING *";
@@ -44,6 +49,7 @@ export class UserList {
                 u.first_name,
                 u.last_name,
                 u.password,
+                hash
             ]);
 
             const user = result.rows[0];
