@@ -22,17 +22,18 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 ## RESTful Routes
 #### Products
-- Index - '/products' [GET]
-- Show - '/products/:id' [GET]
-- Create - '/products' [POST]
+- Index - 'products/' [GET]
+- Show - 'products/:id' [GET]
+- Create - 'products/' [POST] (token)
 
 #### Users
-- Index - '/users' [GET]
-- Show - '/users/:id' [GET]
-- Create - '/users' [POST]
+- Index - 'users/' [GET] (token)
+- Show - 'users/:id' [GET] (token)
+- Create - 'users/' [POST] (token)
 
 #### Orders
-- Current Order by user (args: user id) - '/orders/:id/products'[GET] 
+- Index - 'orders/:id' [GET] (token)
+- Current Order by user (args: user id) - '/orders/current/:id'[GET] (token)
 
 ## Data Shapes
 #### Product
@@ -59,7 +60,7 @@ These are the notes from a meeting with the frontend developer that describe wha
 Table: products(id: varchar[primary key],name: varchar,price: number)
 
 #### User
-Table: users(id: varchar[primary key], first_name: varchar, last_name: varchar, password: varchar)
+Table: users(id: serial[primary key], first_name: varchar, last_name: varchar, password: varchar)
 
 #### Orders
 Table: order_products(id: varchar[primary key], quantity: number, status: varchar, product_id: varchar [foreign key from products table],user_id: varchar [foreign key from users table])
