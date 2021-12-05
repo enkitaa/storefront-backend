@@ -57,10 +57,10 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 ## Tables
 #### Product
-Table: products(id: varchar[primary key],name: varchar,price: number)
+Table: products(id: varchar[primary key],name: varchar,price: number, category: varchar)
 
 #### User
-Table: users(id: serial[primary key], first_name: varchar, last_name: varchar, password: varchar)
+Table: users(id: serial[primary key], first_name: varchar, last_name: varchar, user_password: varchar)
 
 #### Orders
 Table: order_products(id: varchar[primary key], quantity: number, status: varchar, product_id: varchar [foreign key from products table],user_id: varchar [foreign key from users table])
