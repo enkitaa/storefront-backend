@@ -2,7 +2,7 @@
 import client from "../database";
 
 export type Order = {
-    id: Number;
+    id?: Number;
     status: string;
     user_id: Number;
 };
