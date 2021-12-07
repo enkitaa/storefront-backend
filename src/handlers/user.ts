@@ -1,6 +1,7 @@
 import express from "express";
 import jwt from "jsonwebtoken";
 import { User, UserList } from "../models/user";
+import authTokenVerify from './../middleware/auth'
 
 const user = new UserList();
 
@@ -94,11 +95,11 @@ const create = async (req: express.Request, res: express.Response) => {
   };
   
   const userRoutes = (app: express.Application) => {
-    app.get('/users', index);
-    app.get('/users/:id', show);
+    app.get('/users', authTokenVerify, index);
+    app.get('/users/:id', authTokenVerify, show);
     app.post('/users', create);
-    app.put('/users/:id', update);
-    app.delete('/users/:id', deleteUser);
+    app.put('/users/:id', authTokenVerify, update);
+    app.delete('/users/:id', authTokenVerify, deleteUser);
     app.post('/users/login', authenticate);
   };
 
