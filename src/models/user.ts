@@ -2,7 +2,7 @@
 import client from "../database";
 import bcrypt, { hash } from 'bcrypt';
 
-const pepper = process.env.BCYPT_PASSWORD;
+const pepper = process.env.BCRYPT_PASSWORD;
 const saltrounds = process.env.SALT_ROUNDS;
 
 export type User = {
@@ -92,7 +92,7 @@ export class UserList {
           conn.release();
           if (result.rows.length) {
             const authUser = result.rows[0];
-            if (bcrypt.compareSync(user.password + pepper, authUser.password)) {
+            if (bcrypt.compareSync(user.password + pepper, authUser.user_password)) {
               return authUser;
             }
           }
