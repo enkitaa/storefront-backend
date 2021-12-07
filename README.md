@@ -83,3 +83,15 @@ npm run test
 npm run prettier
 npm run lint
 ```
+## Author
+
+#### Ankita Singh
+[<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />](https://github.com/enkitaa)
+[<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/ankita-singh-31a47aa0/) 
+
+## Reference
+
+https://www.geeksforgeeks.org/ <br/>
+https://classroom.udacity.com/ (Knowledge-Udacity) <br/>
+https://stackoverflow.com/ <br/>
+https://stackoverflow.com/questions/53516594/why-do-i-keep-getting-delete-cr-prettier-prettier <br/>
