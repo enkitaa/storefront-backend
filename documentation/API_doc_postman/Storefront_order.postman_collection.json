@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "9b068424-a987-4c25-8298-3561da837a71",
+		"name": "Storefront_order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/orders/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODk1NjJ9.hEpm6ANO8vSNVIjNcYWFIBfzUcxk28IG5DMPRNsyPHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						""
+					]
+				},
+				"description": "Get orders"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/orders/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODk1NjJ9.hEpm6ANO8vSNVIjNcYWFIBfzUcxk28IG5DMPRNsyPHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"1"
+					]
+				},
+				"description": "Get order by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/orders/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODk1NjJ9.hEpm6ANO8vSNVIjNcYWFIBfzUcxk28IG5DMPRNsyPHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":7,\r\n    \"status\":\"Payment done\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/orders/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						""
+					]
+				},
+				"description": "Add new order"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/orders/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODk1NjJ9.hEpm6ANO8vSNVIjNcYWFIBfzUcxk28IG5DMPRNsyPHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":\"7\",\r\n    \"status\":\"Delivered\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/orders/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"1"
+					]
+				},
+				"description": "Update order"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/orders/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODk1NjJ9.hEpm6ANO8vSNVIjNcYWFIBfzUcxk28IG5DMPRNsyPHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"1"
+					]
+				},
+				"description": "Delete order by ID"
+			},
+			"response": []
+		}
+	]
+}

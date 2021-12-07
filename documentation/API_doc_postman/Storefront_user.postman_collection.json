@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "5c05b4ad-cd07-4133-99be-7c804553f221",
+		"name": "Storefront_user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\":\"Admin\",\r\n    \"lastname\":\"Storefront\",\r\n    \"password\":\"storeAdmin\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Create admin user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\":\"Admin\",\r\n    \"lastname\":\"Storefront\",\r\n    \"password\":\"stoAdmi\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				},
+				"description": "Login Wrong credentials"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\":\"Admin\",\r\n    \"lastname\":\"Storefront\",\r\n    \"password\":\"storeAdmin\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				},
+				"description": "Successfull login"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODg4MzF9.g8KQcVZPCVDHzyEhYn_I8i5AQXd6liwgMefnvnJ6vHs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Get users list"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODg4MzF9.g8KQcVZPCVDHzyEhYn_I8i5AQXd6liwgMefnvnJ6vHs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"8"
+					]
+				},
+				"description": "Get user with ID"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/users/7",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODk1NjJ9.hEpm6ANO8vSNVIjNcYWFIBfzUcxk28IG5DMPRNsyPHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"firstname\": \"Test\",\r\n        \"lastname\": \"User\",\r\n        \"password\": \"gdyABN\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"7"
+					]
+				},
+				"description": "Update user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/users/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODg4MzF9.g8KQcVZPCVDHzyEhYn_I8i5AQXd6liwgMefnvnJ6vHs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"1"
+					]
+				},
+				"description": "Delete user"
+			},
+			"response": []
+		}
+	]
+}

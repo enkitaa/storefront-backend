@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "4f339b9a-3b89-4707-a835-12bf427c39d4",
+		"name": "Storefront_order_products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/order_products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODk1NjJ9.hEpm6ANO8vSNVIjNcYWFIBfzUcxk28IG5DMPRNsyPHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order_id\":2,\r\n    \"product_id\":2,\r\n    \"quantity\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/order_products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order_products"
+					]
+				},
+				"description": "Create order product"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/order_products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODk1NjJ9.hEpm6ANO8vSNVIjNcYWFIBfzUcxk28IG5DMPRNsyPHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/order_products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order_products"
+					]
+				},
+				"description": "Get ordered products"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/order_products/3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODk1NjJ9.hEpm6ANO8vSNVIjNcYWFIBfzUcxk28IG5DMPRNsyPHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/order_products/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order_products",
+						"3"
+					]
+				},
+				"description": "Get product by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/order_products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODk1NjJ9.hEpm6ANO8vSNVIjNcYWFIBfzUcxk28IG5DMPRNsyPHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order_id\":2,\r\n    \"product_id\":2,\r\n    \"quantity\":6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/order_products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order_products",
+						"2"
+					]
+				},
+				"description": "Update order products"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/order_products/2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJmaXJzdF9uYW1lIjoiQWRtaW4iLCJsYXN0X25hbWUiOiJTdG9yZWZyb250IiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRPRENTRHBiVGtsRVI5ZGhqb0xwVVp1UGk4TTltTXI2Y3NxTnJETDVxLjRidWJWL1lSRk8yRyJ9LCJpYXQiOjE2Mzg4ODk1NjJ9.hEpm6ANO8vSNVIjNcYWFIBfzUcxk28IG5DMPRNsyPHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/order_products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order_products",
+						"2"
+					]
+				},
+				"description": "Delete order by ID"
+			},
+			"response": []
+		}
+	]
+}
