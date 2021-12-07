@@ -58,7 +58,10 @@ ENV=dev
 ```
 ### Run migrations
 ```shell
-db-migrate up
+db-migrate up --config ./database.json -env dev
+```
+```shell
+db-migrate up --config ./database.json -env test
 ```
 ### Scripts:
 

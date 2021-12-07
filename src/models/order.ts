@@ -3,9 +3,7 @@ import client from "../database";
 
 export type Order = {
     id: Number;
-    quantity: Number;
     status: string;
-    product_id: Number;
     user_id: Number;
 };
 
@@ -35,31 +33,25 @@ export class OrderList {
         }
     }
     async create(o: Order): Promise<Order> {
-        let status = o.status;
-        if(status == 'undefined'){
-            status = 'active'
-        }
         try {
             const sql =
-                "INSERT INTO orders (quantity, status, product_id, user_id) VALUES($1, $2, $3, $4) RETURNING *";
+                "INSERT INTO orders (status, user_id) VALUES($1, $2) RETURNING *";
             // @ts-ignore
             const con = await client.connect();
             const result = await con.query(sql, [
-                o.quantity,
                 o.status,
-                o.product_id,
                 o.user_id,
             ]);
             const order = result.rows[0];
             con.release();
             return order;
         } catch (err) {
-            throw new Error(`Could not add new order ${o.product_id}. Error: ${err}`);
+            throw new Error(`Could not add new order for ${o.user_id}. Error: ${err}`);
         }
     }
     async delete(id: number): Promise<Order> {
         try {
-            const sql = "DELETE FROM orders WHERE id=($1)";
+            const sql = "DELETE FROM orders WHERE id=($1) RETURNING *";
             // @ts-ignore
             const conn = await client.connect();
             const result = await conn.query(sql, [id]);
@@ -72,4 +64,16 @@ export class OrderList {
             throw new Error(`Could not delete order ${id}. Error: ${err}`);
         }
     }
+
+    async update(id: number, o: Order): Promise<Order> {
+        try {
+          const conn = await client.connect();
+          const sql = 'UPDATE orders SET user_id = ($1), status = ($2) WHERE id=($3) RETURNING *';
+          const result = await conn.query(sql, [o.user_id, o.status, id]);
+          conn.release();
+          return result.rows[0];
+        } catch (err) {
+          throw new Error(`Could not update order ${o.id}. Error: ${err}`);
+        }
+      }
 }
