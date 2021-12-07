@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 
 const authTokenVerify = (req: express.Request, res: express.Response, next: express.NextFunction) => {
   try {
-    //Get token from req header passed as bearer token 
+    //Get token from req header passed as bearer token
     const authHeader = req.headers.authorization as string;
     if (!authHeader) {
       throw new Error('JWT Token Required');

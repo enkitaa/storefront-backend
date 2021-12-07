@@ -11,7 +11,7 @@ describe('Test endpoint responses for /users', () => {
     last_name: 'Singh',
     password: 'pass123'
   };
-  
+
   it('should create user', async () => {
     const response = await request.post('/users').send(user);
     expect(response.status).toBe(200);
@@ -31,16 +31,12 @@ describe('Test endpoint responses for /users', () => {
     expect(response.text).toBe('Wrong username/password');
   });
   it('should get user with ID', async () => {
-    const response = await request
-      .get('/users/1')
-      .set('Authorization', 'bearer ' + jwtToken)
-      expect(response.status).toBe(200);
+    const response = await request.get('/users/1').set('Authorization', 'bearer ' + jwtToken);
+    expect(response.status).toBe(200);
   });
   it('should get users list', async () => {
-    const response = await request
-      .get('/users')
-      .set('Authorization', 'bearer ' + jwtToken);
-      expect(response.status).toBe(200);
+    const response = await request.get('/users').set('Authorization', 'bearer ' + jwtToken);
+    expect(response.status).toBe(200);
   });
 
   it('should update user', async () => {
@@ -51,19 +47,17 @@ describe('Test endpoint responses for /users', () => {
         lastname: 'Singh',
         password: 'passwd'
       })
-      .set('Authorization', 'bearer ' + jwtToken)
-      expect(res.status).toBe(200);
+      .set('Authorization', 'bearer ' + jwtToken);
+    expect(res.status).toBe(200);
   });
 
   it('should not delete user without required token', async () => {
-    const res= await request.delete('/users/1')
+    const res = await request.delete('/users/1');
     expect(res.status).toBe(401);
   });
 
   it('should delete users with token', async () => {
-    const res = await request
-      .delete('/users/1')
-      .set('Authorization', 'bearer ' + jwtToken);
-      expect(res.status).toBe(200);
+    const res = await request.delete('/users/1').set('Authorization', 'bearer ' + jwtToken);
+    expect(res.status).toBe(200);
   });
 });

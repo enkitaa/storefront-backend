@@ -11,7 +11,7 @@ const index = async (_req: express.Request, res: express.Response) => {
   } catch (err) {
     res.status(400);
     if (err instanceof Error) {
-    res.json(err.message);
+      res.json(err.message);
     }
   }
 };
@@ -23,7 +23,7 @@ const show = async (req: express.Request, res: express.Response) => {
   } catch (err) {
     res.status(400);
     if (err instanceof Error) {
-        res.json(err.message);
+      res.json(err.message);
     }
   }
 };
@@ -39,7 +39,7 @@ const create = async (req: express.Request, res: express.Response) => {
   } catch (err) {
     res.status(400);
     if (err instanceof Error) {
-        res.json(err.message);
+      res.json(err.message);
     }
   }
 };
@@ -55,7 +55,7 @@ const update = async (req: express.Request, res: express.Response) => {
   } catch (err) {
     res.status(400);
     if (err instanceof Error) {
-        res.json(err.message);
+      res.json(err.message);
     }
   }
 };
@@ -67,7 +67,7 @@ const deleteProduct = async (req: express.Request, res: express.Response) => {
   } catch (err) {
     res.status(400);
     if (err instanceof Error) {
-        res.json(err.message);
+      res.json(err.message);
     }
   }
 };

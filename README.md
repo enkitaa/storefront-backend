@@ -70,10 +70,6 @@ db-migrate up --config ./database.json -env test
 ```shell
 npm run start
 ```
-- Start server watch mode
-```shell
-npm run watch
-```
 - Build
 ```shell
 npm run build
