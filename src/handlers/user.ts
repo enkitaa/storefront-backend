@@ -84,8 +84,12 @@ const create = async (req: express.Request, res: express.Response) => {
         password: req.body.password
       };
       const authUser = await user.authenticate(userInfo);
-      const token = jwt.sign({ user: authUser }, process.env.JWT_TOKEN_SECRET as jwt.Secret);
-      res.send({ token });
+      if(authUser != null){
+        const token = jwt.sign({ user: authUser }, process.env.JWT_TOKEN_SECRET as jwt.Secret);
+        res.send({ token });
+      }else{
+        res.send( 'Wrong username/password' );
+      };
     } catch (err) {
       res.status(400);
       if (err instanceof Error) {

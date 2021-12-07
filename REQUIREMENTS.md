@@ -6,24 +6,34 @@ These are the notes from a meeting with the frontend developer that describe wha
 ## API Endpoints
 
 ### RESTful Routes
-#### Products
+#### Products endpoints
 - Index - 'products/' [GET]
 - Show - 'products/:id' [GET]
-- Create - 'products/' [POST] (token)
-- Update - '/products/:id' [PUT] (token)
-- Delete - '/products/:id' [DELETE] (token)
+- Create - 'products/' [POST]( 'name','price') (bearer token)
+- Update - '/products/:id' [PUT] (bearer token)
+- Delete - '/products/:id' [DELETE] (bearer token)
 
-#### Users
-- Index - 'users/' [GET] (token)
-- Show - 'users/:id' [GET] (token)
-- Create - 'users/' [POST] (token)
-- Update - '/users/:id' [PUT] (token)
-- Delete - '/users/:id' [DELETE] (token)
-- Login - '/users/login' [POST] (receive token)
+#### Users endpoints
+- Index - 'users/' [GET] (bearer token) 
+- Show - 'users/:id' [GET] (bearer token)
+- Create - 'users/' [POST]( 'firstname', 'lastname', 'password') (bearer token)
+- Update - '/users/:id' [PUT] (bearer token)
+- Delete - '/users/:id' [DELETE] (bearer token)
+- Login - '/users/login' [POST] (bearer token - authentication)
 
 #### Orders
-- Index - 'orders/:id' [GET] (token)
-- Current Order by user (args: user id) - '/orders/current/:id'[GET] (token)
+- Index - '/orders' [GET] (bearer token)
+- Show - '/orders/:id' [GET] (bearer token)
+- Create - '/orders' [POST] (bearer token)
+- Update - '/orders/:id' [PUT] (bearer token)
+- Delete - '/orders/:id' [DELETE] (bearer token)
+
+#### Order Products
+- Index - '/order_products' [GET] (bearer token)
+- Show - '/order_products/:id' [GET] (bearer token)
+- Create - '/order_products' [POST] (bearer token)
+- Update - '/order_products/:id' [PUT] (bearer token)
+- Delete - '/order_products/:id' [DELETE] (bearer token)
 
 ## Tables
 
@@ -37,5 +47,5 @@ Table: users(id: serial[primary key], first_name: varchar, last_name: varchar, u
 Table: orders(id: serial[primary key], status: varchar, user_id: number [foreign key from users table])
 
 #### Order Products
-Table: order_products(order_id: number[foreign key from orders table], product_id: varchar [foreign key from products table]), quantity: number
+Table: order_products(order_id: number[foreign key from orders table], product_id: varchar [foreign key from products table], quantity: number)
 

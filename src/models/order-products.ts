@@ -70,7 +70,7 @@ export class OrderProductList {
     try {
       const conn = await client.connect();
       const sql =
-        "UPDATE orders SET order_id = ($1), product_id = ($2), quantity = ($3) WHERE id=($4) RETURNING *";
+        "UPDATE order_products SET order_id = ($1), product_id = ($2), quantity = ($3) WHERE id=($4) RETURNING *";
       const result = await conn.query(sql, [
         o.order_id,
         o.product_id,

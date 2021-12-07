@@ -24,7 +24,7 @@ export class ProductList {
         try {
             //@ts-ignore
             const con = await client.connect();
-            const sql = "SELECT * from products WHERE user_id=($1)";
+            const sql = "SELECT * from products WHERE id=($1)";
             const result = await con.query(sql, [id]);
             con.release();
             return result.rows[0];

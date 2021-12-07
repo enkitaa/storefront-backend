@@ -53,6 +53,7 @@ POSTGRES_TEST_DB=store_test_data
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=your_secret_pass
 BCRYPT_PASSWORD=your_secret_pass
+JWT_TOKEN_SECRET=your_secret_pass
 SALT_ROUNDS=10
 ENV=dev
 ```
