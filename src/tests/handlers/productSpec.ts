@@ -5,7 +5,7 @@ import { Product } from "../../models/product";
 
 const request = supertest(app);
 
-describe("Tests endpoint responses for /products", () => {
+describe("Test endpoint responses for /products", () => {
   const user: User = {
     first_name: "Ankita",
     last_name: "Singh",
