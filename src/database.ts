@@ -16,16 +16,16 @@ let client: Pool;
 if (ENV == "dev") {
   client = new Pool({
     host: POSTGRES_HOST,
-    database: POSTGRES_PASSWORD,
+    database: POSTGRES_DB,
     user: POSTGRES_USER,
-    password: POSTGRES_DB
+    password: POSTGRES_PASSWORD
   });
 } else {
   client = new Pool({
     host: POSTGRES_HOST,
-    database: POSTGRES_PASSWORD,
+    database: POSTGRES_TEST_DB,
     user: POSTGRES_USER,
-    password: POSTGRES_TEST_DB
+    password: POSTGRES_PASSWORD
   });
 }
 
