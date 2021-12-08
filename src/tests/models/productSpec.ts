@@ -46,7 +46,7 @@ describe('Product Model', () => {
     expect(result.price).toBe(5);
   });
   it('should delete products by id', async () => {
-    productList.delete(productId);
+    await productList.delete(productId);
     const result = await productList.show(productId);
     expect(result).toBeFalsy();
   });

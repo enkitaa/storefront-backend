@@ -18,7 +18,7 @@ export class OrderList {
       throw new Error(`Cannot get orders ${err}`);
     }
   }
-  async show(id: number): Promise<Order[]> {
+  async show(id: number): Promise<Order> {
     try {
       const con = await client.connect();
       const sql = 'SELECT * from orders WHERE id=($1)';
