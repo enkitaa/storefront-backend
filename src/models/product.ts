@@ -18,7 +18,7 @@ export class ProductList {
       throw new Error(`Cannot get products ${err}`);
     }
   }
-  async show(id: number): Promise<Product[]> {
+  async show(id: number): Promise<Product> {
     try {
       const con = await client.connect();
       const sql = 'SELECT * from products WHERE id=($1)';

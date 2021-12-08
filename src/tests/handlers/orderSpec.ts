@@ -14,7 +14,7 @@ describe('Tests endpoint responses for /orders', () => {
 
   const order: Order = {
     status: 'active',
-    user_id: 2
+    user_id: 1
   };
 
   let jwtToken: string;
@@ -56,7 +56,7 @@ describe('Tests endpoint responses for /orders', () => {
   });
 
   it('should delete order with token', async () => {
-    const response = await request.delete('/orders/100').set('Authorization', 'bearer ' + jwtToken);
+    const response = await request.delete('/orders/1').set('Authorization', 'bearer ' + jwtToken);
     expect(response.status).toBe(200);
   });
 });

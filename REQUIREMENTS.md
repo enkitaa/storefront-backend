@@ -16,7 +16,7 @@ These are the notes from a meeting with the frontend developer that describe wha
 #### Users endpoints
 - Index - 'users/' [GET] (bearer token) 
 - Show - 'users/:id' [GET] (bearer token)
-- Create - 'users/' [POST]( 'firstname', 'lastname', 'password') (bearer token)
+- Create - 'users/' [POST]( 'first_name', 'last_name', 'password') (bearer token)
 - Update - '/users/:id' [PUT] (bearer token)
 - Delete - '/users/:id' [DELETE] (bearer token)
 - Login - '/users/login' [POST] (bearer token - authentication)

@@ -32,8 +32,8 @@ const show = async (req: express.Request, res: express.Response) => {
 const create = async (req: express.Request, res: express.Response) => {
   try {
     const userInfo: User = {
-      first_name: req.body.firstname,
-      last_name: req.body.lastname,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
       password: req.body.password
     };
     const newUser = await user.create(userInfo);
@@ -49,8 +49,8 @@ const create = async (req: express.Request, res: express.Response) => {
 const update = async (req: express.Request, res: express.Response) => {
   try {
     const userInfo: User = {
-      first_name: req.body.firstname,
-      last_name: req.body.lastname,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
       password: req.body.password
     };
 
@@ -79,8 +79,8 @@ const deleteUser = async (req: express.Request, res: express.Response) => {
 const authenticate = async (req: express.Request, res: express.Response) => {
   try {
     const userInfo: User = {
-      first_name: req.body.firstname,
-      last_name: req.body.lastname,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
       password: req.body.password
     };
     const authUser = await user.authenticate(userInfo);

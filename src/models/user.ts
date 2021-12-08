@@ -23,7 +23,7 @@ export class UserList {
       throw new Error(`Cannot get users. Error:${err}`);
     }
   }
-  async show(id: string): Promise<User[]> {
+  async show(id: string): Promise<User> {
     try {
       const con = await client.connect();
       const sql = 'SELECT * from users WHERE id=($1)';

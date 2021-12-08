@@ -9,24 +9,27 @@ const request = supertest(app);
 
 describe('Tests endpoint responses for /order_products', () => {
   const user: User = {
+    id: 1,
     first_name: 'Ankita',
     last_name: 'Singh',
     password: 'passwd123'
   };
 
   const order: Order = {
+    id: 1,
     status: 'active',
-    user_id: 2
+    user_id: 1
   };
 
   const product: Product = {
+    id: 1,
     name: 'Fridge',
     price: 900
   };
 
   const order_product: OrderProduct = {
-    order_id: 2,
-    product_id: 2,
+    order_id: 1,
+    product_id: 1,
     quantity: 4
   };
 

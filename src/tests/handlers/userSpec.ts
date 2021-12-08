@@ -7,6 +7,7 @@ let jwtToken: string;
 
 describe('Test endpoint responses for /users', () => {
   const user: User = {
+    id: 1,
     first_name: 'Ankita',
     last_name: 'Singh',
     password: 'pass123'
@@ -24,8 +25,8 @@ describe('Test endpoint responses for /users', () => {
   });
   it('should not login on wrong credentials passed', async () => {
     const response = await request.post('/users/login').send({
-      firstname: 'Ankita',
-      lastname: 'Singh',
+      first_name: 'Ankita',
+      last_name: 'Singh',
       password: 'pass45'
     });
     expect(response.text).toBe('Wrong username/password');
@@ -40,11 +41,12 @@ describe('Test endpoint responses for /users', () => {
   });
 
   it('should update user', async () => {
+    await request.delete('/orders/2').set('Authorization', 'bearer ' + jwtToken);
     const res = await request
-      .put('/users/1')
+      .put('/users/2')
       .send({
-        firstname: 'Anjali',
-        lastname: 'Singh',
+        first_name: 'Anjali',
+        last_name: 'Singh',
         password: 'passwd'
       })
       .set('Authorization', 'bearer ' + jwtToken);
