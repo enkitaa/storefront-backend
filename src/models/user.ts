@@ -1,4 +1,3 @@
-//@ts-ignore
 import client from '../database';
 import bcrypt from 'bcrypt';
 
@@ -15,7 +14,6 @@ export type User = {
 export class UserList {
   async index(): Promise<User[]> {
     try {
-      //@ts-ignore
       const con = await client.connect();
       const sql = 'SELECT * from users';
       const result = await con.query(sql);
@@ -27,7 +25,6 @@ export class UserList {
   }
   async show(id: string): Promise<User[]> {
     try {
-      //@ts-ignore
       const con = await client.connect();
       const sql = 'SELECT * from users WHERE id=($1)';
       const result = await con.query(sql, [id]);
@@ -41,15 +38,11 @@ export class UserList {
     const hash = bcrypt.hashSync(u.password + pepper, parseInt(saltrounds as string));
     try {
       const sql = 'INSERT INTO users (first_name, last_name, user_password) VALUES($1, $2, $3) RETURNING *';
-      //@ts-ignore
       const con = await client.connect();
       const result = await con.query(sql, [u.first_name, u.last_name, hash]);
-
-      const user = result.rows[0];
-
       con.release();
 
-      return user;
+      return result.rows[0];
     } catch (err) {
       throw new Error(`Could not add new user ${u.first_name}. Error: ${err}`);
     }
@@ -58,7 +51,6 @@ export class UserList {
   async delete(id: string): Promise<User> {
     try {
       const sql = 'DELETE FROM users WHERE id=($1) RETURNING *';
-      //@ts-ignore
       const conn = await client.connect();
       const result = await conn.query(sql, [id]);
       const user = result.rows[0];
@@ -93,8 +85,7 @@ export class UserList {
       }
       return null;
     } catch (err) {
-      //@ts-ignore
-      throw new Error(`Could not authenticate user ${user.first_name}. Error: ${err.message}`);
+      throw new Error(`Could not authenticate user ${user.first_name}. Error: ${err}`);
     }
   }
 }

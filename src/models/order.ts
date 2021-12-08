@@ -1,4 +1,3 @@
-// @ts-ignore
 import client from '../database';
 
 export type Order = {
@@ -10,7 +9,6 @@ export type Order = {
 export class OrderList {
   async index(): Promise<Order[]> {
     try {
-      // @ts-ignore
       const con = await client.connect();
       const sql = 'SELECT * from orders';
       const result = await con.query(sql);
@@ -22,7 +20,6 @@ export class OrderList {
   }
   async show(id: number): Promise<Order[]> {
     try {
-      // @ts-ignore
       const con = await client.connect();
       const sql = 'SELECT * from orders WHERE id=($1)';
       const result = await con.query(sql, [id]);
@@ -35,12 +32,10 @@ export class OrderList {
   async create(o: Order): Promise<Order> {
     try {
       const sql = 'INSERT INTO orders (status, user_id) VALUES($1, $2) RETURNING *';
-      // @ts-ignore
       const con = await client.connect();
       const result = await con.query(sql, [o.status, o.user_id]);
-      const order = result.rows[0];
       con.release();
-      return order;
+      return result.rows[0];
     } catch (err) {
       throw new Error(`Could not add new order for ${o.user_id}. Error: ${err}`);
     }
@@ -48,14 +43,12 @@ export class OrderList {
   async delete(id: number): Promise<Order> {
     try {
       const sql = 'DELETE FROM orders WHERE id=($1) RETURNING *';
-      // @ts-ignore
       const conn = await client.connect();
       const result = await conn.query(sql, [id]);
-      const order = result.rows[0];
 
       conn.release();
 
-      return order;
+      return result.rows[0];
     } catch (err) {
       throw new Error(`Could not delete order ${id}. Error: ${err}`);
     }
